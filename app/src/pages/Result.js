@@ -1,5 +1,18 @@
+import React, {useEffect, useState} from "react";
 
 const Result = () => {
+    const [returned, setReturned] = useState([{}])
+
+    useEffect(() => {
+        fetch('/').then(
+            response => response.json()
+        ).then(
+            data => {
+                setReturned(data)
+            }
+        )
+    }, [])
+
     return (
         <>
             <section id="section2" className="section">
