@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Result from "./Result";
-import Error from "./Error";
+// import Error from "./Error";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 

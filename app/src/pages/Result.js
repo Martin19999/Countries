@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 
 const Result = () => {
     const [returned, setReturned] = useState('')
-    console.log("fetch once")
+   
     useEffect(() => {  
         fetch('http://localhost:5000/result', {
             method: 'GET',
