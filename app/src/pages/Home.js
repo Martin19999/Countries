@@ -9,8 +9,9 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const [input, setInput] = useState('')
   const [error, setError] = useState(false)
+  const navigate = useNavigate();
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit =  (e) => {
     e.preventDefault(); // Prevents the default form submission
   
     // Send data to the server
@@ -24,19 +25,23 @@ const Home = () => {
       localStorage.setItem('input', input);
 
       try {
-        const response = await fetch('http://localhost:5000/submit', {
+        fetch('http://localhost:5000/result', {
           method: 'POST',
+          credentials: "include",
           headers: {
             'Content-Type': 'text/plain',
           },
           body: input,
-        });
-
-        if (response.ok) {
-          console.log(input);
-        } else {
-          throw new Error('Network response was not ok');
-        }
+        }).then(response => {
+          if (response.ok) {
+            navigate('/result');
+          } else {
+            console.log(response);
+            throw new Error('Network response was not ok');
+          }
+        })
+       
+        
       } catch (error) {
         console.error('Error:', error);
       }
