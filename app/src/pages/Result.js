@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 const Result = () => {
-    const [returned, setReturned] = useState('')
+    const [returned, setReturned] = useState({})
    
     useEffect(() => {  
         fetch('http://localhost:5000/result', {
@@ -10,7 +10,7 @@ const Result = () => {
         })
         .then(response => {
             if (response.ok) {
-                return response.text();
+                return response.json();
             } else {
                 throw new Error('Network response was not ok.');
             }
@@ -24,11 +24,37 @@ const Result = () => {
 
     }, [])
 
+    const unpack = (obj) => {
+        if(Object.keys(obj).length > 0){
+            const keys = Object.keys(obj)
+            // const items = Object.entries(obj)
+            return(
+                <ul>
+                    {keys.map((key) => (
+                        
+                        obj[key] !== null && Array.isArray(obj[key]) 
+                        
+                            ? <ul><li>{key}: {obj[key]}</li></ul>
+                            :(
+                                typeof obj[key] !== 'object' 
+                                ? <ul><li>{key}: {obj[key].toString()}</li></ul>
+                                : <ul><li>{key}: {unpack(obj[key])}</li></ul>
+                            )
+                      
+
+                    ))} 
+                </ul>
+            );
+        }
+
+        
+    }
+
     return (
+        
         <>
             <section id="section2" className="section">
-                <h1>${returned}</h1>
-            
+                {unpack(returned)}
             </section>
         </>
     )

@@ -26,8 +26,7 @@ app.post('/result', (req, res) => {
 
         axios.get(url)
         .then(response => {
-            req.session.resultData = response.data; 
-            console.log(req.session.resultData)
+            req.session.resultData = response.data[0]; 
             req.session.save(() => {
                 return res.json({ resultData: req.session.resultData });
             });
