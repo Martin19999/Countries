@@ -45,9 +45,12 @@ app.post('/result', (req, res) => {
 })
 
 app.get('/result', (req, res) => {
+    console.log('111')
     if (req.session.resultData) {
+        console.log('222')
         res.json(req.session.resultData);
     } else {
+        console.log('333')
         res.status(404).send('Error fetching data from the API');
     }
     
