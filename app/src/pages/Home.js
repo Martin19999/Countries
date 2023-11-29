@@ -35,6 +35,7 @@ const Home = () => {
             body: input,
           }).then(response => {
             if (response.ok) {
+              console.log('okkkkkkk')
               navigate('/result');
             } else {
               
