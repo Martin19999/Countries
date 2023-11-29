@@ -4,7 +4,7 @@ const cors = require('cors')
 const axios = require('axios');
 
 app.use(cors({
-    origin: 'http://localhost:3000' || 'https://countries-f.onrender.com', 
+    origin: 'https://countries-f.onrender.com' || 'http://localhost:3000', 
     credentials: true
 }));
 
