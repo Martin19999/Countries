@@ -4,7 +4,7 @@ const Result = () => {
     const [returned, setReturned] = useState({})
    
     useEffect(() => {  
-        fetch('http://localhost:5000/result', {
+        fetch('http://localhost:5000/result' || 'https://countries-2mn9.onrender.com/result', {
             method: 'GET',
             credentials: 'include',
         })
