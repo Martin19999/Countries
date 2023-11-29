@@ -28,9 +28,11 @@ app.post('/result', (req, res) => {
         axios.get(url)
         .then(response => {
             req.session.resultData = response.data[0]; 
+            console.log(req.session.resultData)
             req.session.save(() => {
                 return res.json({ resultData: req.session.resultData });
             });
+            console.log(req.session.resultData)
         })
         .catch(error => {
             var string = encodeURIComponent('Error fetching data from the API');
@@ -47,6 +49,7 @@ app.post('/result', (req, res) => {
 
 app.get('/result', (req, res) => {
     console.log('111')
+    console.log(req.session.resultData)
     if (req.session.resultData) {
         console.log('222')
         res.json(req.session.resultData);
