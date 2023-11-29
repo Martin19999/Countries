@@ -16,6 +16,7 @@ app.use(session({
   secret: 'aabc',  
   resave: false,
   saveUninitialized: false,
+  cookie: { secure: true }
 }));
 
 app.post('/result', (req, res) => {
