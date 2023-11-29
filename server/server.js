@@ -32,7 +32,9 @@ app.post('/result', (req, res) => {
             });
         })
         .catch(error => {
-            console.error('Error fetching data:', error);
+            var string = encodeURIComponent('Error fetching data from the API');
+            res.redirect('/error/?data=' + string);
+            console.error('Error fetching data:', error.message);
         });
         
     } catch (error) {
@@ -46,9 +48,10 @@ app.get('/result', (req, res) => {
     if (req.session.resultData) {
         res.json(req.session.resultData);
     } else {
-        res.status(404).send('No data available');
+        res.status(404).send('Error fetching data from the API');
     }
     
 });
+
 
 app.listen(5000);
