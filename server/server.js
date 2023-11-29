@@ -4,7 +4,7 @@ const cors = require('cors')
 const axios = require('axios');
 
 app.use(cors({
-    origin: 'https://countries-f.onrender.com' || 'http://localhost:3000', 
+    origin: 'https://countries-f.onrender.com', 
     credentials: true
 }));
 
@@ -47,13 +47,10 @@ app.post('/result', (req, res) => {
 })
 
 app.get('/result', (req, res) => {
-    console.log('111')
     console.log(req.session.resultData)
     if (req.session.resultData) {
-        console.log('222')
         res.json(req.session.resultData);
     } else {
-        console.log('333')
         res.status(404).send('Error fetching data from the API');
     }
     

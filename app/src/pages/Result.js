@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import '../styles/common.css';
 
 const Result = () => {
     const [returned, setReturned] = useState({})

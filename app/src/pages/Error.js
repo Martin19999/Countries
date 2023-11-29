@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import '../styles/common.css';
 
 const Error = () => {
     const location = useLocation();
@@ -12,7 +13,7 @@ const Error = () => {
                     ? <p>Network error. Please check your internet connection.</p>
                     : <p>Ooops, the country you are looking for does not exist.</p>}
             </div>
-            
+
         </>
     )
 }

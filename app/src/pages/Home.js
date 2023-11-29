@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import '../App.css';
+import '../styles/common.css';
+import '../styles/home.css';
 import { useNavigate } from 'react-router-dom';
 
 

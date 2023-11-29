@@ -6,7 +6,7 @@
 .section {
   width: 100%;
   height: 100vh; /* 100% of the viewport height */
-  background-image: url('../public/flags.jpg');
+  background-image: url('../../public/flags.jpg');
   background-size: 100% 200%; /* Twice the height of the viewport */
   background-repeat: no-repeat;
 }
@@ -17,11 +17,4 @@
 
 #section2  {
   background-position: bottom;
-}
-
-/* Additional styling for content inside sections, if needed */
-.content {
-  text-align: center;
-  font-size: 24px;
-  color: white;
 }
