@@ -4,7 +4,7 @@ const cors = require('cors')
 const axios = require('axios');
 
 app.use(cors({
-    origin: 'https://countries-f.onrender.com', 
+    origin: 'http://localhost:3000', 
     credentials: true
 }));
 
@@ -12,31 +12,34 @@ app.use(express.text());
 
 const session = require('express-session');
 
-app.set("trust proxy", 1); 
+// app.set("trust proxy", 1); 
 app.use(session({
   secret: 'aabc',  
   resave: false,
-  saveUninitialized: false,
-  cookie: { secure: true, sameSite: 'none'}
+  saveUninitialized: false
+//   cookie: { secure: true, sameSite: 'none'}
 }));
 
 app.post('/result', (req, res) => {
-    const country = req.body.trim().toLowerCase()
+    var country = req.body.trim().toLowerCase()
+    country = alt(country);
     const url = `https://restcountries.com/v3.1/name/` + country + `?fullText=true`;
 
-    try {
 
+    try {
         axios.get(url)
         .then(response => {
             req.session.resultData = response.data[0]; 
             req.session.save(() => {
                 return res.json({ resultData: req.session.resultData });
             });
+            
         })
         .catch(error => {
             var string = encodeURIComponent('Error fetching data from the API');
             res.redirect('/error/?data=' + string);
             console.error('Error fetching data:', error.message);
+            
         });
         
     } catch (error) {
@@ -47,8 +50,8 @@ app.post('/result', (req, res) => {
 })
 
 app.get('/result', (req, res) => {
-    console.log(req.session.resultData)
     if (req.session.resultData) {
+        // console.log(req.session.resultData.name.common);
         res.json(req.session.resultData);
     } else {
         res.status(404).send('Error fetching data from the API');
@@ -56,5 +59,18 @@ app.get('/result', (req, res) => {
     
 });
 
+function alt(input) {
+    const US = ['usa', 'us', 'america', 'united states of america', 'united states'];
+    const UK = ['united kingdom', 'uk']
 
-app.listen(10000);
+    if (US.includes(input.toLowerCase())) {
+        return 'United States of America';
+    } else if (UK.includes(input.toLowerCase())) {
+        return 'United Kingdom';
+    } else {
+        return input;
+    }
+}
+
+
+app.listen(5000);

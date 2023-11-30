@@ -1,12 +1,103 @@
-/* .section {
-    width: 100%;
-    
+html {
+    /* Adjust the path to your image */
     background-image: url('../../public/flags.jpg');
-    background-size: cover; 
+    background-color: #58a7d5;
+    background-size: cover; /* or use 100% auto */
     background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-    height: 200vh;
+    height: 100%; 
+    
+    /* overflow-y: hidden; */
+}
+
+
+
+.fixed-container {
+    position: relative; 
+    
+    /* z-index: 0; */
+    padding-bottom: 5em;
+    text-align: center;
+    margin-top: 1em;  
+}
+
+.fixed-container > * {
+    position: fixed; 
+    width: 50vw;
+    margin-left: 25%;
+    
+}
+
+.fixed-container > h2{
+    margin-top: 4.3em;  
+}
+
+
+.scrollable-content {
+    height: 75vh;
+    margin-top: 5.5em;
+    overflow-y: scroll; 
+}
+
+
+.invisible-div {
+    visibility: hidden;
+    padding-top: 1em;
+}
+
+input + button {
+    padding: 0.5em;
+    font-size: large;
+
+}
+
+button + button {
+    padding: 0.5em;
+    font-size: large;
+
+}
+
+div > input:first-child {
+    /* font-size: 1.5em; */
+    padding: 0.5em 10em;
+    text-align: center;
+    font-size: large;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left; /* Centers content horizontally */
+    align-items: center; 
+    padding-top: 1em;
+}
+
+@keyframes blinkingText {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.error-msg {
+    padding-top: 1em;
+    color:aliceblue;
+    animation: blinkingText 2s infinite;
+}
+
+h2 {
+    text-align: center;
+}
+  
+
+
+/* :not(input) + button {
+    padding: 1em;
+    margin-top: 3em;
+    margin-left: 45%;
+    width: 10vw;
 } */
+
+

@@ -1,15 +1,21 @@
 import React, {useEffect, useState} from "react";
+import { useNavigate } from 'react-router-dom';
 import '../styles/common.css';
+import Search from "../components/Search.js";
+
 
 const Result = () => {
     const [returned, setReturned] = useState({})
-   
+    const navigate = useNavigate();
+    
     useEffect(() => {  
-        fetch('https://countries-2mn9.onrender.com/result', {
+        
+        fetch('http://localhost:5000/result', {
             method: 'GET',
             credentials: 'include',
         })
         .then(response => {
+            
             if (response.ok) {
                 return response.json();
             } else {
@@ -17,13 +23,15 @@ const Result = () => {
             }
         })
         .then(text => {
+            console.log("here3");
             setReturned(text);
         })
         .catch(error => {
+            console.log("here4");
             console.error('Error:', error);
         });
 
-    }, [])
+    }, [returned])
 
     const unpack = (obj) => {
         if(Object.keys(obj).length > 0){
@@ -35,11 +43,11 @@ const Result = () => {
                         
                         obj[key] !== null && Array.isArray(obj[key]) 
                         
-                            ? <ul><li>{key}: {obj[key]}</li></ul>
+                            ? <ul><li key={key.id}>{key}: {obj[key]}</li></ul>
                             :(
                                 typeof obj[key] !== 'object' 
-                                ? <ul><li>{key}: {obj[key].toString()}</li></ul>
-                                : <ul><li>{key}: {unpack(obj[key])}</li></ul>
+                                ? <ul><li key={key.id}>{key}: {obj[key].toString()}</li></ul>
+                                : <ul><li key={key.id}>{key}: {unpack(obj[key])}</li></ul>
                             )
                       
 
@@ -51,12 +59,19 @@ const Result = () => {
         
     }
 
+
     return (
         
         <>
-            <section id="section2" className="section">
+            <div className="fixed-container">
+                <Search />
+                { returned.name && <h2>Information for: {returned.name.common} / { returned.name.official} </h2>}
+                
+                
+            </div>
+            <div className="scrollable-content">
                 {unpack(returned)}
-            </section>
+            </div>
         </>
     )
 }

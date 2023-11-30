@@ -1,78 +1,53 @@
 import { useEffect, useState } from "react";
-import '../styles/common.css';
 import '../styles/home.css';
-import { useNavigate } from 'react-router-dom';
-
-
+import Search from "../components/Search.js";
 
 const Home = () => {
-  const [input, setInput] = useState('')
-  const [emptyError, setEmptyError] = useState(false)
-  const [illegalError, setIllegalError] = useState(false)
-  const navigate = useNavigate();
+  const [pressedQuestion, setPressedQuestion] = useState(false);
 
-  const handleFormSubmit =  (e) => {
-    e.preventDefault(); // Prevents the default form submission
-  
-  
-    if (input.trim.length > 100) {
-      setInput(input.substring(0,100));
+  useEffect(() => { 
+    if (pressedQuestion) {
+      window.scrollTo({
+        top: 1500,
+        behavior: 'smooth',
+     });
+     setPressedQuestion(false);
     }
-    if (input === null || input.trim().length === 0) {
-      setEmptyError(true);
-    } else {
-      if (!(/^[A-Za-z\s'-]+$/.test(input))){
-        setIllegalError(true);
-      } else {
+  }, [pressedQuestion])
 
-        try {
-
-          fetch('https://countries-2mn9.onrender.com/result', {
-            method: 'POST',
-            credentials: "include",
-            headers: {
-              'Content-Type': 'text/plain',
-            },
-            body: input,
-          }).then(response => {
-            if (response.ok) {
-              navigate('/result');
-            } else {
-              
-              navigate('/error', { state: { status: response.status } });
-            }
-          })
-        } catch (error) {
-          navigate('/error', { state: { status: 'network-error' } });
-        }
-      }
-      
-
-      
-
-      
-    }
-  };
+  window.addEventListener('beforeunload', () => {
+      localStorage.clear();
+  });
   
 
 
   return (
     <>
       <section id="section1" className="section">
-        <h1>Discover the World: Interactive Country Information Guide</h1>
-        <form onSubmit={handleFormSubmit}>
-          <label htmlFor="input">Enter a country:</label>
-          <input type="text" id="input" value={input} onChange={(e) => setInput(e.target.value)}/>
+        <div id="title-div-outer">
+          <div id="title-div-inner">
+            <h2>Interactive Country Information Guide</h2>
+            <input type="submit" id="questionMark" value="?" onClick={(e) => setPressedQuestion(true)} />
+          </div>
+          <h1>DISCOVER THE WORLD</h1>
+        </div>
+        
+        
 
-          {emptyError && <div style={{ color: 'red' }}>Input cannot be empty.</div>}
-          {illegalError && <div style={{ color: 'red' }}>Only these special characters are allowed: spaces, hyphens, and apostrophes</div>}
-
-          <input type="submit" id="button"/>
-        </form>
+        <Search />
         
         
       </section>
       <section id="section2" className="section">
+        <div>
+          <h2>What is this website for?</h2>
+          <p>This website allows you to access to the basic information of any given country. Type the country
+            name in the search box, the relevant information from this country will be shown. Resourses: restcountries.com
+          </p>
+          <footer>
+              &copy; 2023 Jianhao Feng. All rights reserved.
+          </footer>
+        </div>
         
       </section>
       
