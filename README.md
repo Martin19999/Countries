@@ -2,6 +2,27 @@
 
 This is a web application where users type in a country name as a string, and the basic information about this country is rendered back to the user.
 
+File Sturcture: 
+
+/Countries
+|-- /app                     # Frontend folder
+|   |-- /src               
+|   |   |-- /components      # React components
+|   |   |   |-- Search.js
+|   |   |   |-- ToHome.js
+|   |   |
+|   |   |-- /pages           # React pages
+|   |   |   |-- Home.js
+|   |   |   |-- Result.js
+|   |   |   |-- Error.js
+|   |   |
+|   |   |-- /styles          # CSS files
+|     
+|-- /server                  # Backend folder
+|   |-- server.js            # Configuration files
+
+
+
 ## Getting Started (running on localhost)
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
