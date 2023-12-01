@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import ToHome from "./ToHome.js";
 
+
 const Search = () => {
   const [input, setInput] = useState("");
   const [emptyError, setEmptyError] = useState(false);
@@ -36,7 +37,7 @@ const Search = () => {
       } else {
         setIllegalError(false);
         try {
-          fetch("http://localhost:5000/result", {
+          fetch(process.env.REACT_APP_URL, {
             method: "POST",
             credentials: "include",
             headers: {

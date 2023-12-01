@@ -9,13 +9,18 @@
  *      3. Handle alternative names like US, USA...       
  */
 
+
+const url = 'http://localhost:3000';
+// **** Only uncomment below when in deployment ****
+// const url = 'https://countries-f.onrender.com';
+
 const express = require('express');
 const app = express();
 const cors = require('cors')
 const axios = require('axios');
 
 app.use(cors({
-    origin: 'http://localhost:3000', 
+    origin: url, 
     credentials: true
 }));
 
@@ -23,11 +28,13 @@ app.use(express.text());
 
 const session = require('express-session');
 
+// **** Only uncomment below when in deployment ****
 // app.set("trust proxy", 1); 
 app.use(session({
   secret: 'aabc',  
   resave: false,
   saveUninitialized: false
+// **** Only uncomment below when in deployment ****
 //   cookie: { secure: true, sameSite: 'none'}
 }));
 

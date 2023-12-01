@@ -15,6 +15,7 @@ import Search from "../components/Search.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus } from "@fortawesome/free-regular-svg-icons";
 
+
 const Result = () => {
   const location = useLocation(); // location change indicates new form submition
   const [returned, setReturned] = useState({}); // the json data sent back from server
@@ -29,7 +30,7 @@ const Result = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/result", {
+    fetch(process.env.REACT_APP_URL, {
       method: "GET",
       credentials: "include",
     })
