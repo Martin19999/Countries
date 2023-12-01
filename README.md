@@ -3,7 +3,7 @@
 This is a web application where users type in a country name as a string, and the basic information about this country is rendered back to the user.
 
 File Sturcture: 
-
+```
 /Countries
 |-- /app                     # Frontend folder
 |   |-- /src               
@@ -20,7 +20,7 @@ File Sturcture:
 |     
 |-- /server                  # Backend folder
 |   |-- server.js            # Configuration files
-
+```
 
 
 ## Getting Started (running on localhost)
