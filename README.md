@@ -27,8 +27,7 @@ git clone https://github.com/Martin19999/Countries.git
     - Open /app/package.json, make sure line 4 is 
         ```
         "proxy": "http://localhost:5000",
-        ```
-    
+        ```    
 1. Install the necessary packages for the frontend::
 ```
 cd [project directory name]/client
@@ -68,7 +67,6 @@ Deploying this application involves setting up both the frontend (React.js) and 
     - Connect to your GitHub repository containing the backend code
     - Configure the build settings
     - Deploy the backend service. Render will assign a URL to the backend
-
 1. Frontend Deployment on Render:
     - Create another new Web Service on your Render dashboard for the frontend.
     - Connect it to the repository 
