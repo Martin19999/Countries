@@ -1,3 +1,14 @@
+/**
+ * server.js
+ * 
+ * Nodejs backend running Express. 
+ * Receives input from client in POST, send corresponding JSON back in GET.
+ * Important: 
+ *      1. cors
+ *      2. session
+ *      3. Handle alternative names like US, USA...       
+ */
+
 const express = require('express');
 const app = express();
 const cors = require('cors')
@@ -25,23 +36,19 @@ app.post('/result', (req, res) => {
     country = alt(country);
     const url = `https://restcountries.com/v3.1/name/` + country + `?fullText=true`;
 
-
     try {
         axios.get(url)
         .then(response => {
             req.session.resultData = response.data[0]; 
-            req.session.save(() => {
+            req.session.save(() => { // save the data in session for later use in GET
                 return res.json({ resultData: req.session.resultData });
-            });
-            
+            });      
         })
         .catch(error => {
             var string = encodeURIComponent('Error fetching data from the API');
             res.redirect('/error/?data=' + string);
-            console.error('Error fetching data:', error.message);
-            
-        });
-        
+            console.error('Error fetching data:', error.message);     
+        });  
     } catch (error) {
         res.status(500).send('Error fetching data from the API');
     }
@@ -51,14 +58,14 @@ app.post('/result', (req, res) => {
 
 app.get('/result', (req, res) => {
     if (req.session.resultData) {
-        // console.log(req.session.resultData.name.common);
         res.json(req.session.resultData);
     } else {
         res.status(404).send('Error fetching data from the API');
     }
-    
 });
 
+// the server should handle simplified names like US, UK, which people use commonly 
+// but not available on API
 function alt(input) {
     const US = ['usa', 'us', 'america', 'united states of america', 'united states'];
     const UK = ['united kingdom', 'uk']
@@ -71,6 +78,5 @@ function alt(input) {
         return input;
     }
 }
-
 
 app.listen(5000);
