@@ -18,9 +18,9 @@ Before you begin, ensure you have the following installed:
 Follow these steps to get your development environment running
 
 1. Clone the repository:
-```
-git clone https://github.com/Martin19999/Countries.git
-```
+    ```
+    git clone https://github.com/Martin19999/Countries.git
+    ```
 1. Make a few changes to the files:
     - Open /server/server.js, make sure you have line 13 uncommented, line 15,32,38 commented
     - Open /app/.env, make sure you have the 1st URL uncommented, and 2nd URL commented
@@ -29,24 +29,24 @@ git clone https://github.com/Martin19999/Countries.git
         "proxy": "http://localhost:5000",
         ```    
 1. Install the necessary packages for the frontend::
-```
-cd [project directory name]/client
-npm install
-```
+    ```
+    cd [project directory name]/client
+    npm install
+    ```
 1. Install the necessary packages for the backend::
-```
-cd ../server
-npm install
-```
+    ```
+    cd ../server
+    npm install
+    ```
 1. Run back-end server:
-```
-npm run dev
-```
+    ```
+    npm run dev
+    ```
 1. Go to app(client) folder, run the front-end application:
-```
-cd ../app
-npm run start
-```
+    ```
+    cd ../app
+    npm run start
+    ```
 1. The application should now be running on localhost. You can access the frontend at http://localhost:3000 
 
 
