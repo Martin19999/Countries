@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import '../styles/common.css';
 import Search from "../components/Search.js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +7,7 @@ import { faSquarePlus } from '@fortawesome/free-regular-svg-icons';
 
 
 const Result = () => {
+    const location = useLocation();
     const [returned, setReturned] = useState({})
     const [collapsed, setCollapsed] = useState({});
 
@@ -19,7 +20,7 @@ const Result = () => {
     };
     
     useEffect(() => {  
-        
+        console.log("heree")
         fetch('http://localhost:5000/result', {
             method: 'GET',
             credentials: 'include',
@@ -33,22 +34,19 @@ const Result = () => {
             }
         })
         .then(text => {
-            // console.log("here3");
             setReturned(text);
         })
         .catch(error => {
-            // console.log("here4");
             console.error('Error:', error);
         });
 
-    }, [])
+    }, [location.key])
 
     useEffect(() => {
         if (Object.keys(returned).length > 0) {
             const newCollapsedStates = {};
             Object.keys(returned).forEach(key => {
                 if (typeof returned[key] === 'object' && (Object.keys(returned[key]).length > 3 || returned[key].length > 3)) {
-                    console.log(key, returned[key], returned[key].length > 3)
                     newCollapsedStates[key] = true; 
                 }
             });
@@ -92,7 +90,7 @@ const Result = () => {
         
         <>
             <div className="fixed-container">
-                <Search />
+                <Search /> 
                 { returned.name && <h2>Information for: {returned.name.common} / { returned.name.official} { returned.flag}</h2>}
                 
                 

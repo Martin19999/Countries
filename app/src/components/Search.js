@@ -14,6 +14,16 @@ const Search = () => {
 
     const handleFormSubmit =  (e) => {
         e.preventDefault(); // Prevents the default form submission
+
+        // const currentSearchedValue = localStorage.getItem('searched');
+        // if (currentSearchedValue === null) {
+        //     // If 'searched' does not exist in localStorage, set it to 'true'
+        //     localStorage.setItem('searched', 'true');
+        // } else {
+        //     // If 'searched' exists, toggle its value
+        //     const newValue = currentSearchedValue === 'true' ? 'false' : 'true';
+        //     localStorage.setItem('searched', newValue);
+        // }
       
         if (input === null || input.trim().length === 0) {
             setEmptyError(true);
@@ -39,6 +49,7 @@ const Search = () => {
                 body: input,
               }).then(response => {
                 if (response.ok) {
+                  console.log("hhhhh")
                   navigate('/result');
                 } else {
                   
@@ -65,7 +76,7 @@ const Search = () => {
           <div>
               <div>
                 <input type="text" placeholder="Enter a country name" value={input || ''} onChange={(e) => setInput(e.target.value)}/>
-                <button type="submit" onClick={handleFormSubmit}>
+                <button type="submit">
                     <FontAwesomeIcon icon={faSearch}/>
                 </button>
                 <ToHome />
