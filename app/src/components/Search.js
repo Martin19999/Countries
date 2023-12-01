@@ -67,6 +67,7 @@ const Search = () => {
       <div>
         <div>
           <input
+            id="searchBox"
             type="text"
             placeholder="Enter a country name"
             value={input || ""}

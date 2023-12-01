@@ -17,7 +17,7 @@ const ToHome = () => {
   };
 
   return (
-    <button onClick={toHome}>
+    <button id="ToHome" onClick={toHome}>
       <FontAwesomeIcon icon={faHouse} />
     </button>
   );
