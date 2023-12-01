@@ -66,7 +66,7 @@ const Search = () => {
   return (
     <form onSubmit={handleFormSubmit}>
       <div>
-        <div>
+        <div className="search-container">
           <input
             id="searchBox"
             type="text"
@@ -88,8 +88,7 @@ const Search = () => {
 
       {illegalError && (
         <div className="error-msg">
-          ! Only these special characters are allowed: spaces, hyphens, and
-          apostrophes
+          ! The only special characters allowed: spaces, hyphens & apostrophes
         </div>
       )}
       {!emptyError && !illegalError && <div className="invisible-div">a </div>}

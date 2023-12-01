@@ -1,25 +1,19 @@
 html {
-    /* Adjust the path to your image */
     background-image: url('../../public/flags.jpg');
     background-color: #58a7d5;
     background-size: cover;
-    /* or use 100% auto */
     background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
     height: 100%;
-
-    /* overflow-y: hidden; */
 }
 
 
 
 .fixed-container {
     position: relative;
-
-    /* z-index: 0; */
     padding-bottom: 5em;
     text-align: center;
     margin-top: 1em;
@@ -38,9 +32,17 @@ html {
 
 
 .scrollable-content {
-    height: 75vh;
-    margin-top: 5.5em;
+    height: 65vh;
+    margin-top: 6.5em;
     overflow-y: scroll;
+    width: 90vw;
+    margin-left: 1vw;
+    margin-right: 5vw;
+
+}
+
+.scrollable-content::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -62,9 +64,17 @@ button+button {
 }
 
 div>input:first-child {
-    padding: 0.5em 10em;
+    padding: 0.5em 0.5em;
     text-align: center;
     font-size: large;
+    width: 30vw;
+}
+
+.search-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 form {
@@ -93,14 +103,18 @@ form {
     padding-top: 1em;
     color: aliceblue;
     animation: blinkingText 2s infinite;
+    white-space: nowrap;
 }
 
 h2 {
     text-align: center;
 }
 
+.resulth2 {
+    white-space: nowrap;
+}
+
 
 li {
     list-style-position: inside;
-    /* or 'outside' */
 }

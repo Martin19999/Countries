@@ -114,7 +114,7 @@ const Result = () => {
     <>
       <div className="fixed-container">
         <Search />
-        {returned.name && ( <h2> Information for: {returned.name.common} {returned.flag}</h2>)}
+        {returned.name && ( <h2 className="resulth2"> Information for: {returned.name.common} {returned.flag}</h2>)}
       </div>
       <div className="scrollable-content">{unpack(returned)}</div>
     </>

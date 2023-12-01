@@ -23,7 +23,7 @@ const Error = () => {
         <Search />
         {status === "network-error" 
           ? (<h2>Network error. Please check your internet connection.</h2>)
-          : (<h2>Ooops, the country "{input}" you are looking for does not seem to
+          : (<h2>Ooops, it seems the country "{input}" you are searching for does not
                 exist. Have you checked the spelling?</h2>
             )
         }
