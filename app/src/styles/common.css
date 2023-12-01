@@ -92,12 +92,7 @@ h2 {
 }
   
 
-
-/* :not(input) + button {
-    padding: 1em;
-    margin-top: 3em;
-    margin-left: 45%;
-    width: 10vw;
-} */
-
-
+li {
+    list-style-position: inside; /* or 'outside' */
+  }
+  
