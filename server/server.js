@@ -35,7 +35,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 // **** Only uncomment below when in deployment ****
-//   cookie: { secure: true, sameSite: 'none'}
+//   ,cookie: { secure: true, sameSite: 'none'}
 }));
 
 app.post('/result', (req, res) => {
