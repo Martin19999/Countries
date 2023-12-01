@@ -19,7 +19,9 @@ File Sturcture:
 |   |   |-- /styles          # CSS files
 |     
 |-- /server                  # Backend folder
-|   |-- server.js            # Configuration files
+|   |-- server.js            # Server
+|
+|-- README.md
 ```
 
 
