@@ -10,9 +10,9 @@
  */
 
 
-// const url = 'http://localhost:3000';
+const url = 'http://localhost:3000';
 // **** Only uncomment below when in deployment ****
-const url = 'https://countries-f.onrender.com';
+// const url = 'https://countries-f.onrender.com';
 
 const express = require('express');
 const app = express();
@@ -29,13 +29,13 @@ app.use(express.text());
 const session = require('express-session');
 
 // **** Only uncomment below when in deployment ****
-app.set("trust proxy", 1); 
+// app.set("trust proxy", 1); 
 app.use(session({
   secret: 'aabc',  
   resave: false,
   saveUninitialized: false
 // **** Only uncomment below when in deployment ****
-  ,cookie: { secure: true, sameSite: 'none'}
+//   ,cookie: { secure: true, sameSite: 'none'}
 }));
 
 app.post('/result', (req, res) => {
