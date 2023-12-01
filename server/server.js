@@ -86,7 +86,9 @@ function alt(input) {
     }
 }
 
-app.listen(10000);
+app.listen(process.env.PORT || 10000);
+//only uncomment below when running on localhost
+//app.listen(process.env.PORT ||5000); 
 
 module.exports = app;  
 
