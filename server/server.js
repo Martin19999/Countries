@@ -29,7 +29,7 @@ app.use(express.text());
 const session = require('express-session');
 
 // **** Only uncomment below when in deployment ****
-app.set("trust proxy", 1); 
+// app.set("trust proxy", 1); 
 app.use(session({
   secret: 'aabc',  
   resave: false,
