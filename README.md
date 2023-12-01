@@ -95,6 +95,7 @@ Deploying this application involves setting up both the frontend (React.js) and 
     - Connect it to the repository 
     - Configure the frontend's build and settings
     - Deploy the frontend service. Render will assign a URL to the frontend
+1. Open the frontend URL, it should be something like https://countries-f.onrender.com/
 
 
 ## Running the tests
