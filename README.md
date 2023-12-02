@@ -2,7 +2,7 @@
 
 This is a web application where users type in a country name as a string, and the basic information about this country is rendered back to the user.
 
-File Sturcture: 
+File Sturcture (tests files and others are omitted here): 
 ```
 /Countries
 |-- /app                     # Frontend folder
