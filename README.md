@@ -27,12 +27,14 @@ File Sturcture (test files and others are omitted here):
 ## Demo
 - Homepage
 <img width="1277" alt="Screenshot 2023-12-02 at 10 43 23" src="https://github.com/Martin19999/Countries/assets/116632169/d378458b-6676-4e2b-9814-c9cb719f3cb6">
+
 - Click the ? -> Slide down to the section two of the Homepage
 <img width="1280" alt="Screenshot 2023-12-02 at 10 43 33" src="https://github.com/Martin19999/Countries/assets/116632169/c13cb396-35c5-45c3-aede-0d42e7789e26">
+
 - Type in a country and hit search or enter
 <img width="1280" alt="Screenshot 2023-12-02 at 10 43 50" src="https://github.com/Martin19999/Countries/assets/116632169/ee8d4afd-f04e-4ecd-975d-185b7fb6b769">
-- Expand the long information - click + to expand, click the expanded content to collapse
-  
+
+- Expand the long information - click + to expand, click the expanded content to collapse 
 <img width="401" alt="Screenshot 2023-12-02 at 10 44 15" src="https://github.com/Martin19999/Countries/assets/116632169/63e93f27-1992-44f3-90df-c3c16762af9b">
 <img width="401" alt="Screenshot 2023-12-02 at 10 44 21" src="https://github.com/Martin19999/Countries/assets/116632169/d9e63269-1ac4-4f33-a8e1-04ecf4f83664">
 
