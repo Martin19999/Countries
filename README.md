@@ -74,7 +74,7 @@ Follow these steps to get your development environment running
 
 
 
-## Deployment
+## Deployment ** (ENABLE cookies for BACK-end in your browser - esstential!!) **
 
 Deploying this application involves setting up both the frontend (React.js) and the backend (Express.js) to work together in production. We're using Render for deployment. Here's how you can deploy the project:
 
@@ -96,6 +96,7 @@ Deploying this application involves setting up both the frontend (React.js) and 
     - Configure the frontend's build and settings
     - Deploy the frontend service. Render will assign a URL to the frontend
 1. Open the frontend URL, it should be something like https://countries-f.onrender.com/
+1. ** ENABLE cookies for BACK-end in your browser - esstential!! **
 
 
 ## Running the tests
