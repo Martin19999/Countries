@@ -32,8 +32,8 @@ File Sturcture:
 - Type in a country and hit search or enter
 <img width="1280" alt="Screenshot 2023-12-02 at 10 43 50" src="https://github.com/Martin19999/Countries/assets/116632169/ee8d4afd-f04e-4ecd-975d-185b7fb6b769">
 - Expand the long information - click + to expand, click the expanded content to collapse
-<img width="340" alt="Screenshot 2023-12-02 at 10 44 15" src="https://github.com/Martin19999/Countries/assets/116632169/bbba59ef-490c-468d-a37d-e4d29d15d170">
-<img width="401" alt="Screenshot 2023-12-02 at 10 44 21" src="https://github.com/Martin19999/Countries/assets/116632169/a9f5a161-d87b-4fbb-b2a1-26c9277d843f">
+<img width="338" alt="Screenshot 2023-12-02 at 10 44 15" src="https://github.com/Martin19999/Countries/assets/116632169/63e93f27-1992-44f3-90df-c3c16762af9b">
+<img width="401" alt="Screenshot 2023-12-02 at 10 44 21" src="https://github.com/Martin19999/Countries/assets/116632169/d9e63269-1ac4-4f33-a8e1-04ecf4f83664">
 
 
 
