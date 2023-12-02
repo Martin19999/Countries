@@ -25,15 +25,15 @@ File Sturcture:
 ```
 
 ## Demo
-    - Homepage
-    <img width="1277" alt="Screenshot 2023-12-02 at 10 43 23" src="https://github.com/Martin19999/Countries/assets/116632169/d378458b-6676-4e2b-9814-c9cb719f3cb6">
-    - Click the ? -> Slide down to the section two of the Homepage
-    <img width="1280" alt="Screenshot 2023-12-02 at 10 43 33" src="https://github.com/Martin19999/Countries/assets/116632169/c13cb396-35c5-45c3-aede-0d42e7789e26">
-    - Type in a country and hit search or enter
-    <img width="1280" alt="Screenshot 2023-12-02 at 10 43 50" src="https://github.com/Martin19999/Countries/assets/116632169/ee8d4afd-f04e-4ecd-975d-185b7fb6b769">
-    - Expand the long information - click + to expand, click the expanded content to collapse
-    <img width="340" alt="Screenshot 2023-12-02 at 10 44 15" src="https://github.com/Martin19999/Countries/assets/116632169/bbba59ef-490c-468d-a37d-e4d29d15d170">
-    <img width="401" alt="Screenshot 2023-12-02 at 10 44 21" src="https://github.com/Martin19999/Countries/assets/116632169/a9f5a161-d87b-4fbb-b2a1-26c9277d843f">
+- Homepage
+<img width="1277" alt="Screenshot 2023-12-02 at 10 43 23" src="https://github.com/Martin19999/Countries/assets/116632169/d378458b-6676-4e2b-9814-c9cb719f3cb6">
+- Click the ? -> Slide down to the section two of the Homepage
+<img width="1280" alt="Screenshot 2023-12-02 at 10 43 33" src="https://github.com/Martin19999/Countries/assets/116632169/c13cb396-35c5-45c3-aede-0d42e7789e26">
+- Type in a country and hit search or enter
+<img width="1280" alt="Screenshot 2023-12-02 at 10 43 50" src="https://github.com/Martin19999/Countries/assets/116632169/ee8d4afd-f04e-4ecd-975d-185b7fb6b769">
+- Expand the long information - click + to expand, click the expanded content to collapse
+<img width="340" alt="Screenshot 2023-12-02 at 10 44 15" src="https://github.com/Martin19999/Countries/assets/116632169/bbba59ef-490c-468d-a37d-e4d29d15d170">
+<img width="401" alt="Screenshot 2023-12-02 at 10 44 21" src="https://github.com/Martin19999/Countries/assets/116632169/a9f5a161-d87b-4fbb-b2a1-26c9277d843f">
 
 
 
