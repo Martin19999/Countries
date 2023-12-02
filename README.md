@@ -97,6 +97,8 @@ Deploying this application involves setting up both the frontend (React.js) and 
     - Deploy the frontend service. Render will assign a URL to the frontend
 1. Open the frontend URL, it should be something like https://countries-f.onrender.com/
 1. ** ENABLE cookies for BACK-end in your browser - esstential!! **
+   - Chrome: On the left side of the address bar, there is a "lock" icon, click it, then click "Cookies and site data", click "Manage cookies and site data", make sure you allow both https://countries-2mn9.onrender.com (backend) and https://countries-f.onrender.com (frontend)
+   - Safari: Click "Safari" on the top bar -> Preferences -> Privacy -> UNcheck "Prevent cross-site tracking" 
 
 
 ## Running the tests
